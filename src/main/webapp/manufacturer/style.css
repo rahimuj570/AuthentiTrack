@@ -87,6 +87,13 @@ h1 {
 	transition: .3s;
 }
 
+.nav_active{
+	color: #0078D7 !important;
+	background: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
 .menu-toggle {
 	display: none;
 	background: none;

@@ -19,13 +19,14 @@
     <nav class="navbar no-print">
         <div class="logo">🛡️ AuthentiTrack</div>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
+<%
+String cur_url = request.getRequestURI();%>
         <ul class="nav-links" id="navLinks">
-            <li><a href="add_new_product.jsp">Add Product</a></li>
-            <li><a href="products.jsp">Products</a></li>
-            <li><a href="generate_product.jsp">Generate Production</a></li>
-            <li><a href="batches.jsp">Batches</a></li>
-            <li><a href="show_report.jsp">Reports</a></li>
+            <li><a <%=cur_url.contains("add_new_product.jsp")?"class='nav_active'":"" %>  href="add_new_product.jsp">Add Product</a></li>
+            <li><a <%=cur_url.contains("products.jsp")?"class='nav_active'":"" %> href="products.jsp">Products</a></li>
+            <li><a <%=cur_url.contains("generate_product.jsp")?"class='nav_active'":"" %> href="generate_product.jsp">Generate Production</a></li>
+            <li><a <%=cur_url.contains("batches.jsp")?"class='nav_active'":"" %> href="batches.jsp">Batches</a></li>
+            <li><a <%=cur_url.contains("show_report.jsp")?"class='nav_active'":"" %> href="show_report.jsp">Reports</a></li>
 
             <!-- Dropdown Menu -->
             <li class="dropdown">
