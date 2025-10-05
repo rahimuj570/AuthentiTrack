@@ -32,7 +32,7 @@
         <%
         session.removeAttribute("add_product_bad");
         }%>
-            <form action="AddProductController" method="post">
+            <form action="<%=request.getContextPath() %>/AddProductController" method="post">
                 <div class="input-field">
                     <label for="name">Product Name</label>
                     <input required="required" type="text" name="name" id="name">

@@ -22,7 +22,7 @@
 
 
 	<div class="mid">
-		<h1>Generate Product</h1>
+		<h1>Generate Production</h1>
 		<div class="container">
 			<form id="generate_product_form" action="#">
 				<div class="input-field">
@@ -35,10 +35,9 @@
 						<%} %>
 					</select>
 				</div>
-				<div class="input-field">
-					<label for="batch">Batch No</label> <input readonly type="text"
+				 <input readonly type="hidden"
 						name="batch" id="batch">
-				</div>
+				
 				<div class="input-field">
 					<label for="quantity">Quantity</label> <input required
 						type="number" name="quantity" id="quantity">

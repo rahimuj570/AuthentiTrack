@@ -154,12 +154,15 @@ if(leftDays>0){ %>
 
         <h3>📝 Submit Your Review</h3>
         <small style="color:red">You have <%=leftDays%> days left to write a review</small>
-        <br><input type="tel" id="phone" name="phone" pattern="^01[3-9][0-9]{8}$" placeholder="Your mobile. e.g. 01626404956" required>
+        <br>
+        <form onsubmit="submitReview(event)">
+        <input required type="tel" id="phone" name="phone" pattern="^01[3-9][0-9]{8}$" placeholder="Your mobile. e.g. 01626404956" required>
         <p style="font-size: 14px; color: #555;">
             Format: 01XXXXXXXXX (starts with 013–019, total 11 digits)
         </p>
-        <textarea id="reviewText" placeholder="Write your feedback..."></textarea>
+        <textarea required id="reviewText" placeholder="Write your feedback..."></textarea>
         <button id="feedback_btn" onclick="submitReview()">Submit Review</button>
+        </form>
         <div class="status" id="reviewStatus"></div>
         <%} %>
     </div>
@@ -171,7 +174,8 @@ if(leftDays>0){ %>
     <script>
 
         // Submit review
-        function submitReview() {
+        function submitReview(e) {
+        	e.preventDefault();
         	  Swal.fire({
                   title: 'Processing...',
                   text: 'Please wait while I ready your request.',
